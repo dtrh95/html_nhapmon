@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+    <link
+      href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+
+  <body>
+    <div class="wrapper" id="wrapper">
+      <header class="header">
+        <div class="menu-left">
+          <div id="menu-icon" class="menu-left-menu">
+            <svg
+              height="12pt"
+              viewBox="0 -53 384 384"
+              width="15pt"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"
+              />
+              <path
+                d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"
+              />
+              <path
+                d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"
+              />
+            </svg>
+
+            <span>Danh mục</span>
+          </div>
+
+          <div class="menu-left-search">
+            <img src="loupe.png" alt="icon-search" />
+            <input
+              class="menu-left-search-input"
+              type="text"
+              name=""
+              id=""
+              value=""
+              placeholder="Tìm kiếm"
+            />
+          </div>
+        </div>
+
+        <div class="title-wrap">
+          <h1 class="title">Wephobia</h1>
+        </div>
+
+        <div id="menu-right" class="menu-right">
+          <div class="menu-right-cart">
+            <img src="shopping-cart.svg" alt="shopping-cart" />
+            <p id="goods-quantity">0</p>
+          </div>
+
+          <div class="menu-right-item">
+            <label> Ngôn ngữ </label>
+          </div>
+
+          <div class="menu-right-item">
+            <label> Đăng kí </label>
+          </div>
+
+          <div class="menu-right-item">
+            <label> Đăng nhập </label>
+          </div>
+        </div>
+      </header>
+
+      <section class="main-content">
+        <div class="banner">
+          <img src="banner-web-2-scaled.jpeg" alt="banner" />
+          <div class="banner-button-wrap">
+            <div class="banner-button">
+              <label>Mua hàng</label>
+            </div>
+          </div>
+
+          <div class="down-arrow-wrap">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="46.414"
+              height="31.707"
+              viewBox="0 0 46.414 31.707"
+            >
+              <defs>
+                <filter
+                  id="Path_19"
+                  x="0"
+                  y="0"
+                  width="46.414"
+                  height="31.707"
+                  filterUnits="userSpaceOnUse"
+                >
+                  <feOffset dx="2" dy="2" input="SourceAlpha"></feOffset>
+                  <feGaussianBlur stdDeviation="2.5" result="blur"></feGaussianBlur>
+                  <feFlood flood-opacity="0.4"></feFlood>
+                  <feComposite operator="in" in2="blur"></feComposite>
+                  <feComposite in="SourceGraphic"></feComposite>
+                </filter>
+              </defs>
+              <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_19)">
+                <path
+                  id="Path_19-2"
+                  data-name="Path 19"
+                  d="M15,0,0,15,15,30"
+                  transform="translate(6.21 21.21) rotate(-90)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="sidebar-drawer" class="drawer drawer-hide">
+      <div class="menu">
+        <ul>
+          <li id="all-collections">Tất cả bộ sưu tập</li>
+          <div id="drawer-sub-menu" class="sub-menu">
+            <!-- <a>resort'21 collection</a> -->
+            <!-- <a>summer'21 collection</a> -->
+            <!-- <a>spring'21 collection</a> -->
+            <!-- <a>pre-spring'21 collection</a> -->
+            <!-- <a>holiday'20 collection</a> -->
+          </div>
+          <li>E-shop</li>
+          <li>Giới thiệu</li>
+          <li>Liên hệ</li>
+          <li>Quyền riêng tư và cookies</li>
+        </ul>
+      </div>
+
+      <div class="drawer-footer">
+        <div class="icons-wrapper">
+          <a href="https://facebook.com" target="_blank">
+            <img src="facebook.png" alt="facebook" />
+          </a>
+          <img src="instagram.png" alt="instagram" />
+        </div>
+
+        <div class="language-wrapper">
+          <p>Tiếng việt</p>
+        </div>
+      </div>
+    </div>
+
+    <script charset="utf-8">
+      const sideBarDrawer = document.getElementById('sidebar-drawer');
+      let sideBarVisible = false;
+      const menuIcon = document.getElementById('menu-icon');
+
+      const wrapper = document.getElementById('wrapper');
+
+      const menuRight = document.getElementById('menu-right');
+
+      menuIcon.onclick = () => {
+        if (sideBarVisible === false) {
+          sideBarVisible = true;
+          sideBarDrawer.classList.add('drawer-open');
+          sideBarDrawer.classList.remove('drawer-hide');
+
+          wrapper.classList.add('wrapper-after');
+          wrapper.classList.remove('wrapper-before');
+
+          for (let i = 0; i < menuRight.children.length; i++) {
+            menuRight.children.item(i).classList.add('hide');
+            // menuRight.children.item(i).style.display = 'none';
+          }
+
+          document.body.classList.add('overflow-hidden');
+        } else {
+          sideBarVisible = false;
+          sideBarDrawer.classList.add('drawer-hide');
+          sideBarDrawer.classList.remove('drawer-open');
+
+          wrapper.classList.add('wrapper-before');
+          wrapper.classList.remove('wrapper-after');
+
+          for (let i = 0; i < menuRight.children.length; i++) {
+            menuRight.children.item(i).classList.remove('hide');
+            // menuRight.children.item(i).style.display = 'flex';
+          }
+          document.body.classList.remove('overflow-hidden');
+        }
+      };
+    </script>
+
+    <script charset="utf-8">
+      const collectionList = [
+        "resort'21 collection",
+        "summer'21 collection",
+        "spring'21 collection",
+        "pre-spring'21 collection",
+        "holiday'20 collection",
+      ];
+
+      const eShop = ['Áo', 'Quần', 'Xi líp', 'Áo dzú'];
+
+      const drawerSubmenu = document.getElementById('drawer-sub-menu');
+      const allCollections = document.getElementById('all-collections');
+      let subMenuVisible = false;
+
+      collectionList.forEach((collection) => {
+        const anchor = document.createElement('a');
+        const br = document.createElement('br');
+        anchor.innerHTML = collection;
+        // const textNode = document.createTextNode(collection);
+        // const anchorNode = anchor.appendChild(textNode);
+        drawerSubmenu.appendChild(anchor);
+        drawerSubmenu.appendChild(br);
+      });
+
+      allCollections.onclick = () => {
+        if (!subMenuVisible) {
+          subMenuVisible = true;
+          drawerSubmenu.classList.add('sub-menu-expands');
+        } else {
+          subMenuVisible = false;
+          drawerSubmenu.classList.remove('sub-menu-expands');
+        }
+      };
+    </script>
+  </body>
+</html>
