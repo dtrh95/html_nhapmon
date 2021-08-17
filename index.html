@@ -129,21 +129,9 @@
       <div class="menu">
         <ul>
           <li id="all-collections">Tất cả bộ sưu tập</li>
-          <div id="drawer-sub-menu-collection" class="sub-menu">
-            <!-- <a>resort'21 collection</a> -->
-            <!-- <a>summer'21 collection</a> -->
-            <!-- <a>spring'21 collection</a> -->
-            <!-- <a>pre-spring'21 collection</a> -->
-            <!-- <a>holiday'20 collection</a> -->
-          </div>
+          <div id="drawer-sub-menu-collection" class="sub-menu"></div>
           <li id="eshop-element">E-shop</li>
-          <div id="drawer-sub-menu-eshop" class="sub-menu">
-            <!-- <a>resort'21 collection</a> -->
-            <!-- <a>summer'21 collection</a> -->
-            <!-- <a>spring'21 collection</a> -->
-            <!-- <a>pre-spring'21 collection</a> -->
-            <!-- <a>holiday'20 collection</a> -->
-          </div>
+          <div id="drawer-sub-menu-eshop" class="sub-menu"></div>
           <li>Giới thiệu</li>
           <li>Liên hệ</li>
           <li>Quyền riêng tư và cookies</li>
@@ -164,97 +152,30 @@
       </div>
     </div>
 
-    <script charset="utf-8">
-      const sideBarDrawer = document.getElementById('sidebar-drawer');
-      let sideBarVisible = false;
-      const menuIcon = document.getElementById('menu-icon');
+    <div class="main-nav">
+      <div class="main-nav-sidebar">
+        <ul id="main-nav-sidebar-left" class="main-nav-sidebar-left"></ul>
+      </div>
+      <div class="main-nav-center">
+        <div class="main-nav-center-item">
+          <img src="media/Highlight.jpeg" alt="highlight" />
+        </div>
+        <div class="main-nav-center-item">
+          <p><b>End of season sale</b></p>
+          <p>Up to 50% OFF</p>
+          <p><strong>Từ 24.07.2021 đến 15.08.2021</strong></p>
+          <p>* Áp dụng với đơn hàng online & in-store</p>
+          <p>*Không áp dụng với đơn hàng đặt may riêng</p>
+        </div>
+      </div>
+      <div class="main-nav-sidebar">
+        <ul id="main-nav-sidebar-right" class="main-nav-sidebar-right"></ul>
+      </div>
+    </div>
 
-      const wrapper = document.getElementById('wrapper');
-
-      const menuRight = document.getElementById('menu-right');
-
-      menuIcon.onclick = () => {
-        if (sideBarVisible === false) {
-          sideBarVisible = true;
-          sideBarDrawer.classList.add('drawer-open');
-          sideBarDrawer.classList.remove('drawer-hide');
-
-          wrapper.classList.add('wrapper-after');
-          wrapper.classList.remove('wrapper-before');
-
-          for (let i = 0; i < menuRight.children.length; i++) {
-            menuRight.children.item(i).classList.add('hide');
-            // menuRight.children.item(i).style.display = 'none';
-          }
-
-          document.body.classList.add('overflow-hidden');
-        } else {
-          sideBarVisible = false;
-          sideBarDrawer.classList.add('drawer-hide');
-          sideBarDrawer.classList.remove('drawer-open');
-
-          wrapper.classList.add('wrapper-before');
-          wrapper.classList.remove('wrapper-after');
-
-          for (let i = 0; i < menuRight.children.length; i++) {
-            menuRight.children.item(i).classList.remove('hide');
-            // menuRight.children.item(i).style.display = 'flex';
-          }
-          document.body.classList.remove('overflow-hidden');
-        }
-      };
-    </script>
-
-    <script charset="utf-8">
-      const collectionList = [
-        "resort'21 collection",
-        "summer'21 collection",
-        "spring'21 collection",
-        "pre-spring'21 collection",
-        "holiday'20 collection",
-      ];
-
-      const eShopList = ['Áo', 'Quần', 'Xi líp', 'Áo dzú'];
-
-      const drawerSubmenuColletion = document.getElementById('drawer-sub-menu-collection');
-      const allCollections = document.getElementById('all-collections');
-      const eShopElement = document.getElementById('eshop-element');
-      const drawerSubmenuEshop = document.getElementById('drawer-sub-menu-eshop');
-
-      let subMenuCollectionVisible = false;
-      let subMenuEshopVisible = false;
-
-      function mapAnchor(element, list) {
-        list.forEach((item) => {
-          const anchor = document.createElement('a');
-          const br = document.createElement('br');
-          anchor.innerHTML = item;
-          element.appendChild(anchor);
-          element.appendChild(br);
-        });
-
-        return element;
-      }
-
-      const onClickHandler = (button, element, visible) => {
-        button.onclick = () => {
-          if (!visible) {
-            visible = true;
-            element.classList.add('sub-menu-expands');
-          } else {
-            visible = false;
-            element.classList.remove('sub-menu-expands');
-          }
-        };
-      };
-
-      onClickHandler(
-        allCollections,
-        mapAnchor(drawerSubmenuColletion, collectionList),
-        subMenuCollectionVisible,
-      );
-
-      onClickHandler(eShopElement, mapAnchor(drawerSubmenuEshop, eShopList), subMenuEshopVisible);
-    </script>
+    <script charset="utf-8" src="js/drawer.js"></script>
+    <script charset="utf-8" src="js/drawerSubmenu.js" type="module"></script>
+    <script charset="utf-8" src="js/mainSidebarLeft.js" type="module"></script>
+    <script charset="utf-8" src="js/mainSidebarRight.js" type="module"></script>
   </body>
 </html>

@@ -299,7 +299,7 @@ select:focus {
 }
 
 .drawer .menu {
-  padding: 40px;
+  padding: 40px 30px;
 }
 
 .drawer .menu ul {
@@ -326,12 +326,73 @@ select:focus {
   cursor: pointer;
 }
 
+.drawer .menu ul .sub-menu a:hover {
+  text-decoration: underline;
+}
+
 .drawer .menu ul li {
   cursor: pointer;
   margin: 15px 0;
+}
+.drawer .menu ul li:hover {
+  text-decoration: underline;
 }
 
 .overflow-hidden {
   overflow-y: hidden;
   overflow-x: hidden;
+}
+
+.main-nav {
+  width: 100%;
+  height: 1070px;
+  display: flex;
+  padding-top: 100px;
+}
+
+.main-nav .main-nav-sidebar {
+  width: 18%;
+}
+
+.main-nav .main-nav-center {
+  width: 64%;
+  display: flex;
+}
+
+.main-nav .main-nav-center-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav .main-nav-center-item img {
+  width: 566.5px;
+  height: 849.75px;
+}
+
+.main-nav .main-nav-center-item p {
+  font-family: 'Roboto';
+  font-size: 14px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.main-nav .main-nav-center-item p b {
+  text-transform: uppercase;
+}
+
+.main-nav .main-nav-center-item:nth-child(2) {
+  display: block;
+  padding: 87px 40px 0 35px;
+}
+
+.main-nav .main-nav-sidebar .main-nav-sidebar-left {
+  padding-left: 100px;
+  list-style-type: none;
+}
+
+.main-nav .main-nav-sidebar .main-nav-sidebar-left li {
+  font-family: 'Roboto';
+  font-size: 15px;
+  margin-bottom: 20px;
 }
